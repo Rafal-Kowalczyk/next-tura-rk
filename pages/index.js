@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import Seo from "../components/seo";
+import HomePage from "../components/home-page/home-page";
 
 export default function Home({ children }) {
   return (
@@ -11,7 +12,8 @@ export default function Home({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Seo title={"Next landong page v2 - RK"} />
+      <Seo title={"Next js landing page v2 - RK"} />
+      <HomePage />
       {children}
     </>
   );

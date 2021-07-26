@@ -36,6 +36,12 @@ ${normalize}
       border-bottom: 1px solid ${theme.colors.icon};
     }
   }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none
+  }
 `;
 
 export default GlobalStyle;

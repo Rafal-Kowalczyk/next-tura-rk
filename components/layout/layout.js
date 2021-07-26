@@ -1,6 +1,7 @@
 import React from "react";
 
 import Header from ".././header/header";
+import Footer from "../footer/footer";
 import { PageWrap } from "./layout.style";
 
 function Layout({ children }) {
@@ -9,7 +10,7 @@ function Layout({ children }) {
       <PageWrap>
         <Header />
         {children}
-        <p>footer</p>
+        <Footer />
       </PageWrap>
     </>
   );
