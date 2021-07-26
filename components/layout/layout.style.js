@@ -3,7 +3,7 @@ import theme from "../../styles/theme";
 
 export const PageWrap = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("/images/bp.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -18,4 +18,12 @@ export const PageWrap = styled.div`
   @media ${theme.devices.tabletXS} {
     padding: 4rem;
   }
+`;
+
+export const PageContent = styled.div`
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

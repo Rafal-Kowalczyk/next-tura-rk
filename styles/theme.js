@@ -7,6 +7,7 @@ const theme = {
   devices: {
     tabletXS: `(min-width: 576px)`,
     tablet: `(min-width: 768px)`,
+    laptop: `(min-width: 1200px)`,
   },
 };
 

@@ -22,8 +22,12 @@ export const FooterLi = styled.li`
   }
 `;
 
-export const FooterScroll = styled.div`
+export const FooterNext = styled.div`
   transform: rotate(90deg);
   font-size: 1rem;
   cursor: pointer;
+
+  & a:hover {
+    border: none;
+  }
 `;

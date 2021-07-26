@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { FaFacebookF, FaLinkedinIn, FaGitAlt } from "react-icons/fa";
 
-import { FooterWrap, FooterUl, FooterLi, FooterScroll } from "./footer.style";
+import { FooterWrap, FooterUl, FooterLi, FooterNext } from "./footer.style";
 
 function Footer() {
   const router = useRouter();
@@ -33,11 +33,23 @@ function Footer() {
           </Link>
         </FooterLi>
       </FooterUl>
-      {/* <FooterScroll>
-        {router.pathname === "/" && <span>scroll ---</span>}
-        {router.pathname === "/projects" && <span>--- scroll ---</span>}
-        {router.pathname === "/contact" && <span>--- scroll</span>}
-      </FooterScroll> */}
+      <FooterNext>
+        {router.pathname === "/" && (
+          <Link href="/projects">
+            <a>next page</a>
+          </Link>
+        )}
+        {router.pathname === "/projects" && (
+          <Link href="/contact">
+            <a>next page</a>
+          </Link>
+        )}
+        {router.pathname === "/contact" && (
+          <Link href="/">
+            <a>next page</a>
+          </Link>
+        )}
+      </FooterNext>
     </FooterWrap>
   );
 }
