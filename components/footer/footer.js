@@ -7,7 +7,6 @@ import { FooterWrap, FooterUl, FooterLi, FooterNext } from "./footer.style";
 function Footer() {
   const router = useRouter();
 
-  console.log(router.pathname);
   return (
     <FooterWrap>
       <FooterUl>

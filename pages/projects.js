@@ -1,4 +1,5 @@
 import Head from "next/head";
+import ProjectPage from "../components/projects-page/project-page";
 
 function Projects() {
   return (
@@ -6,7 +7,7 @@ function Projects() {
       <Head>
         <title>RK projects</title>
       </Head>
-      <p>projekty</p>
+      <ProjectPage />
     </>
   );
 }

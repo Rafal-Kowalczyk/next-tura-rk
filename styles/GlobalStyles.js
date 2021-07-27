@@ -42,6 +42,39 @@ ${normalize}
     margin: 0;
     list-style: none
   }
+
+  // swiper styles
+
+  .swiper-wrapper {
+    height: 500px;
+  }
+  .swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom:30px;
+
+    @media(min-width: 768px) {
+      padding-top: 100px;
+      padding-bottom: 30px;
+    }
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+
+    @media(min-width: 768px) {
+      width:400px;
+      height: 400px
+    }
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
 `;
 
 export default GlobalStyle;
