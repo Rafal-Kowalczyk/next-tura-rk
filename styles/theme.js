@@ -3,6 +3,7 @@ const theme = {
     text: "#dddddd",
     icon: "#919194",
     red: "#ff0000",
+    orange: "#ffb600",
   },
   devices: {
     tabletXS: `(min-width: 576px)`,

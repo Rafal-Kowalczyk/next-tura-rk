@@ -16,7 +16,7 @@ ${normalize}
   }
 
   body {
-    font-size: 1.6rem;
+    font-size: 16px;
     font-family: 'Rubik', sans-serif;
     color: ${theme.colors.text};
   }
