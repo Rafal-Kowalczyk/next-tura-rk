@@ -8,7 +8,7 @@ export const PageWrap = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  filter: contrast(160%);
+  filter: contrast(150%);
   padding: 2rem;
   display: flex;
   flex-direction: column;

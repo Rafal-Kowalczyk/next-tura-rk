@@ -1,6 +1,3 @@
-// import img1 from "../../public/images/slide1.jpg";
-// import img2 from "../../public/images/slide2.jpg";
-
 const sliderData = [
   {
     id: 1,

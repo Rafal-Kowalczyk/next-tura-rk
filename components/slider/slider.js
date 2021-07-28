@@ -39,7 +39,7 @@ const Slider = () => {
             <SlideImg src={item.src} alt={item.title} />
             <SlideContent>{item.content}</SlideContent>
             <Link href={`${item.url}`}>
-              <a>link</a>
+              <a>go GitHub code</a>
             </Link>
           </SwiperSlide>
         );
