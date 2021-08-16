@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import emailjs from "emailjs-com";
 
 import { Button } from "../layout/layout.style";
 import {
@@ -8,10 +10,12 @@ import {
   InputGroup,
   Label,
   Input,
+  InputTextarea,
   ErrorText,
 } from "./form.style";
 
 function From() {
+  const [message, setMessage] = useState("");
   const {
     register,
     handleSubmit,
@@ -21,7 +25,20 @@ function From() {
   } = useForm();
 
   const handlerFormSubmit = () => {
-    // emailjs
+    emailjs
+      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
+      .then(
+        (result) => {
+          console.log(result.text);
+          setMessage("Wiadomość wysłana");
+          reset();
+          clearErrors();
+        },
+        (error) => {
+          console.log(error.text);
+          setMessage("Coś poszło nie tak.. Spróbuj ponownie!");
+        }
+      );
     console.log("wysłane");
   };
 
@@ -92,6 +109,16 @@ function From() {
           {errors.email_address && errors.email_address.type === "pattern" && (
             <ErrorText role="alert">Wpisz poprawnie e-mail</ErrorText>
           )}
+        </InputGroup>
+        <InputGroup>
+          <Label htmlFor="message">Treść wiadomości</Label>
+          <InputTextarea
+            type="textarea"
+            rows="3"
+            id="message"
+            name="text_message"
+            placeholder="Your message"
+          />
         </InputGroup>
 
         <Button type="submit">Wyślij</Button>

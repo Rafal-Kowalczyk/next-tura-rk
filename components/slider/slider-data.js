@@ -4,7 +4,8 @@ const sliderData = [
     url: "/",
     title: "Projekt ...",
     src: "/images/slide1.jpg",
-    content: "opis projektu",
+    content:
+      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras ut iaculis odio.",
   },
   {
     id: 2,

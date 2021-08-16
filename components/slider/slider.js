@@ -29,7 +29,6 @@ const Slider = () => {
         modifier: 1,
         slideShadows: true,
       }}
-      // pagination={true}
       className="mySwiper"
     >
       {sliderData.map((item) => {
@@ -39,7 +38,7 @@ const Slider = () => {
             <SlideImg src={item.src} alt={item.title} />
             <SlideContent>{item.content}</SlideContent>
             <Link href={`${item.url}`}>
-              <a>go GitHub code</a>
+              <a style={{ fontSize: "1.3rem" }}>go to GitHub</a>
             </Link>
           </SwiperSlide>
         );

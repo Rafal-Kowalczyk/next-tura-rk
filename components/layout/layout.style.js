@@ -34,8 +34,9 @@ export const Button = styled.button`
   color: ${theme.colors.icon};
   background-color: transparent;
   border: 0;
-  -webkit-box-shadow: 5px 5px 10px 3px rgba(33, 33, 33, 1);
-  box-shadow: 5px 5px 10px 3px rgba(33, 33, 33, 1);
+  border-bottom: 1px solid rgba(33, 33, 33, 1);
+  -webkit-box-shadow: 4px 4px 10px 3px rgba(33, 33, 33, 1);
+  box-shadow: 4px 4px 10px 3px rgba(33, 33, 33, 1);
   transition: 0.3s;
 
   &:hover {

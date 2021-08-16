@@ -29,6 +29,7 @@ ${normalize}
   a {
     color: ${theme.colors.text};
     text-decoration: none;
+    transition: 0.25s;
 
     &:hover {
       color: ${theme.colors.icon};
@@ -46,12 +47,16 @@ ${normalize}
   // swiper styles
 
   .swiper-wrapper {
-    height: 500px;
+    height: 350px;
+
+    @media(min-width: 576px) {
+      height: 450px;
+    }
   }
   .swiper-container {
     width: 100%;
-    padding-top: 50px;
-    padding-bottom:30px;
+    padding-top: 40px;
+    padding-bottom:10px;
 
     @media(min-width: 768px) {
       padding-top: 100px;
@@ -65,7 +70,7 @@ ${normalize}
     width: 200px;
     height: 200px;
 
-    @media(min-width: 768px) {
+    @media(min-width: 576px) {
       width:400px;
       height: 400px
     }

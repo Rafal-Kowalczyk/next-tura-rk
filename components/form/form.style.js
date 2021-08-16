@@ -49,6 +49,22 @@ export const Input = styled.input`
   }
 `;
 
+export const InputTextarea = styled.textarea`
+  width: 100%;
+  margin-top: 2rem;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid ${theme.colors.icon};
+  padding-bottom: 0.5rem;
+  color: ${theme.colors.text};
+
+  &::placeholder {
+    font-size: 1.5rem;
+    color: ${theme.colors.icon};
+  }
+`;
+
 export const ErrorText = styled.p`
   position: absolute;
   left: 1rem;
