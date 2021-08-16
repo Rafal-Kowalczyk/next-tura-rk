@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectCoverflow } from "swiper";
-
 import "swiper/swiper.min.css";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
 import "swiper/components/pagination/pagination.min.css";
@@ -11,9 +10,18 @@ import {
   SlideImg,
   SlideContent,
 } from "../projects-page/projects-page.style";
+
 import sliderData from "./slider-data";
 
 SwiperCore.use([EffectCoverflow]);
+
+const sortedSliders = sliderData.sort((a, b) => {
+  if (a.date < b.date) {
+    return 1;
+  } else {
+    return -1;
+  }
+});
 
 const Slider = () => {
   return (
@@ -31,18 +39,18 @@ const Slider = () => {
       }}
       className="mySwiper"
     >
-      {sliderData.map((item) => {
-        return (
-          <SwiperSlide key={item.id}>
-            <SlideTitle>{item.title}</SlideTitle>
-            <SlideImg src={item.src} alt={item.title} />
-            <SlideContent>{item.content}</SlideContent>
-            <Link href={`${item.url}`}>
-              <a style={{ fontSize: "1.3rem" }}>go to GitHub</a>
-            </Link>
-          </SwiperSlide>
-        );
-      })}
+      {sortedSliders.map((item) => (
+        <SwiperSlide key={item.id}>
+          <SlideTitle>
+            {item.title}, {item.date}
+          </SlideTitle>
+          <SlideImg src={item.src} alt={item.title} />
+          <SlideContent>{item.content}</SlideContent>
+          <Link href={`${item.url}`}>
+            <a style={{ fontSize: "1.3rem" }}>go to GitHub</a>
+          </Link>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };

@@ -7,6 +7,7 @@ export const ProjectsWrap = styled.div`
 `;
 
 export const SlideTitle = styled.h3`
+  padding-top: 1rem;
   margin-bottom: 1rem;
 `;
 
