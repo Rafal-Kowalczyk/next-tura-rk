@@ -11,7 +11,6 @@ export default function Home({ children }) {
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Seo title={"Next js landing page v2 - RK"} />
       <HomePage />
       {children}

@@ -24,9 +24,16 @@ function From() {
     clearErrors,
   } = useForm();
 
-  const handlerFormSubmit = () => {
+  const handlerFormSubmit = (e) => {
+    // console.log(e.target);
+    // e.preventDefault();
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
+      .sendForm(
+        `${process.env.EMJS_SERVICE_ID}`,
+        `${process.env.EMJS_TEMPLATE_ID}`,
+        e.target,
+        `${process.env.EMJS_USER_ID}`
+      )
       .then(
         (result) => {
           console.log(result.text);
@@ -44,7 +51,7 @@ function From() {
 
   return (
     <FormWrap>
-      <FormContent onSubmit={handleSubmit(handlerFormSubmit)}>
+      <FormContent onSubmit={handlerFormSubmit}>
         <FormTitle>Contact form</FormTitle>
         <InputGroup>
           <Label htmlFor="name">Your name</Label>
@@ -121,6 +128,7 @@ function From() {
           />
         </InputGroup>
 
+        <h2>{message}</h2>
         <Button type="submit">Wyślij</Button>
       </FormContent>
     </FormWrap>

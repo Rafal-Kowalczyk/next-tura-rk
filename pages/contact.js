@@ -7,7 +7,6 @@ function Contact() {
       <Head>
         <title>RK Contact</title>
       </Head>
-      <p>Contact</p>
       <From />
     </>
   );
