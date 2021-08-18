@@ -4,7 +4,7 @@ const sliderData = [
     date: "2021-06-22",
     url: "/",
     title: "Projekt ...",
-    src: "/images/p1-2.png",
+    src: "/images/slide1.jpg",
     content:
       "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras ut iaculis odio.",
   },

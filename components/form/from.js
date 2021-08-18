@@ -1,6 +1,7 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
+import Link from "next/link";
 
 import { Button } from "../layout/layout.style";
 import {
@@ -24,9 +25,14 @@ function From() {
     clearErrors,
   } = useForm();
 
-  const handlerFormSubmit = (e) => {
-    // console.log(e.target);
-    // e.preventDefault();
+  // useEffect(() => {
+  //   const messageTimer = setTimeout(() => {
+  //     setMessage("");
+  //   }, 4000);
+  //   return () => clearTimeout(messageTimer);
+  // });
+
+  const handlerFormSubmit = (data, e) => {
     emailjs
       .sendForm(
         `${process.env.EMJS_SERVICE_ID}`,
@@ -37,21 +43,21 @@ function From() {
       .then(
         (result) => {
           console.log(result.text);
-          setMessage("Wiadomość wysłana");
+          setMessage("Message sent");
           reset();
           clearErrors();
         },
         (error) => {
           console.log(error.text);
-          setMessage("Coś poszło nie tak.. Spróbuj ponownie!");
+          setMessage("Something went wrong.. Please try again!");
         }
       );
-    console.log("wysłane");
+    // console.log("wysłane");
   };
 
   return (
     <FormWrap>
-      <FormContent onSubmit={handlerFormSubmit}>
+      <FormContent onSubmit={handleSubmit(handlerFormSubmit)}>
         <FormTitle>Contact form</FormTitle>
         <InputGroup>
           <Label htmlFor="name">Your name</Label>
@@ -69,10 +75,10 @@ function From() {
             })}
           />
           {errors.form_name && errors.form_name.type === "required" && (
-            <ErrorText role="alert">Pole wymagane</ErrorText>
+            <ErrorText role="alert">Required field</ErrorText>
           )}
           {errors.form_name && errors.form_name.type === "pattern" && (
-            <ErrorText role="alert">Wpisz poprawnie name</ErrorText>
+            <ErrorText role="alert">Enter name correctly</ErrorText>
           )}
         </InputGroup>
         <InputGroup>
@@ -90,10 +96,10 @@ function From() {
             })}
           />
           {errors.phone_number && errors.phone_number.type === "required" && (
-            <ErrorText role="alert">Pole wymagane</ErrorText>
+            <ErrorText role="alert">Required field</ErrorText>
           )}
           {errors.phone_number && errors.phone_number.type === "maxLength" && (
-            <ErrorText role="alert">Numer musi zawierać 9 cyfr</ErrorText>
+            <ErrorText role="alert">The number must contain 9 digits</ErrorText>
           )}
         </InputGroup>
         <InputGroup>
@@ -111,14 +117,14 @@ function From() {
             })}
           />
           {errors.email_address && errors.email_address.type === "required" && (
-            <ErrorText role="alert">Pole wymagane</ErrorText>
+            <ErrorText role="alert">Required field</ErrorText>
           )}
           {errors.email_address && errors.email_address.type === "pattern" && (
-            <ErrorText role="alert">Wpisz poprawnie e-mail</ErrorText>
+            <ErrorText role="alert">Enter your email correctly</ErrorText>
           )}
         </InputGroup>
         <InputGroup>
-          <Label htmlFor="message">Treść wiadomości</Label>
+          <Label htmlFor="message">Message content</Label>
           <InputTextarea
             type="textarea"
             rows="3"
@@ -129,7 +135,15 @@ function From() {
         </InputGroup>
 
         <h2>{message}</h2>
-        <Button type="submit">Wyślij</Button>
+        <Button type="submit">
+          {!message ? (
+            "Send"
+          ) : (
+            <Link href={"/"}>
+              <a>Back to home page</a>
+            </Link>
+          )}
+        </Button>
       </FormContent>
     </FormWrap>
   );

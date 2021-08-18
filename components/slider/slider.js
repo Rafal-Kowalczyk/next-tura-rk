@@ -41,9 +41,7 @@ const Slider = () => {
     >
       {sortedSliders.map((item) => (
         <SwiperSlide key={item.id}>
-          <SlideTitle>
-            {item.title}, {item.date}
-          </SlideTitle>
+          <SlideTitle>{item.title}</SlideTitle>
           <SlideImg src={item.src} alt={item.title} />
           <SlideContent>{item.content}</SlideContent>
           <Link href={`${item.url}`}>

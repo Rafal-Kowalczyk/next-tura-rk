@@ -41,7 +41,7 @@ export const Button = styled.button`
 
   &:hover {
     color: ${theme.colors.text};
-    border-bottom: 1px solid ${theme.colors.icon};
+    /* border-bottom: 1px solid ${theme.colors.icon}; */
     cursor: pointer;
   }
 `;
